@@ -12,7 +12,11 @@ namespace QuickBuy.Dominio.Entidades
 
         public override void Validate()
         {
-            
+            if (ProdutoId == 0)
+                AdicionarErro("Não foi identificado a referência do produto");
+
+            if (Quantidade == 0)
+                AdicionarErro("Não foi informada a quantidade do Produto");
         }
     }
 }
